@@ -1,9 +1,12 @@
 import './App.css';
+import CreateTraining from './components/CreateTraining';
+import ShowTraining from './components/ShowTraining'
 
 function App() {
   return (
-    <div>
-      <h1>Make Your Training</h1>
+    <div className='app'>
+      <CreateTraining />
+      <ShowTraining />
     </div>
   );
 }
