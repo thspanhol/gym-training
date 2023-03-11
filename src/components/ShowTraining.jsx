@@ -1,27 +1,36 @@
 import '../App.css';
+import { useContext, useEffect } from "react"
+import { AppContext } from "../context/AppContext"
 
 function App() {
+
+  const { workouts } = useContext(AppContext);
+
+  useEffect(() => console.log(workouts), []);
+
   return (
     <div className='show'>
-      <div className='training'>
-        <h1>Nome do Treino</h1>
 
-        <div className='exercise'>
-          <h3>Nome do Exercício - N.Rep</h3>
-          <img src='https://fitnessprogramer.com/wp-content/uploads/2021/02/High-Cable-Crossover.gif' alt='nome do exercício'/>
-        </div>
+      {
+          workouts.map((t) => {
+            return(
+              <div className='training' key={t.name}>
+        <h1>{t.name}</h1>
 
-        <div className='exercise'>
-          <h3>Nome do Exercício - N.Rep</h3>
-          <img src='https://fitnessprogramer.com/wp-content/uploads/2021/02/High-Cable-Crossover.gif' alt='nome do exercício'/>
+        {t.exercises.map((e) => {
+          return(
+            <div className='exercise' key={e.ex}>
+          <h3>{`Nome do Exercício: ${e.ex} | N.Rep: ${e.rep} | Carga: ${e.car}`}</h3>
+          <img src={e.img} alt={e.ex}/>
         </div>
+          )
+        })}
 
-        <div className='exercise'>
-          <h3>Nome do Exercício - N.Rep</h3>
-          <img src='https://fitnessprogramer.com/wp-content/uploads/2021/02/High-Cable-Crossover.gif' alt='nome do exercício'/>
-        </div>
-        
       </div>
+            )
+          })
+        }
+
     </div>
   );
 }

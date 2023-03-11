@@ -1,29 +1,48 @@
 import '../App.css';
+import { useContext, useState } from "react"
+import { AppContext } from "../context/AppContext"
 
 function CreateTraining() {
+
+  const { editWorkouts, workouts } = useContext(AppContext);
+
+  const [novoTreino, setNovoTreino] = useState('');
+  const [exNome, setExNome] = useState('');
+  const [exRep, setExRep] = useState('');
+  const [exCar, setExCar] = useState('');
+  const [exImg, setExImg] = useState('');
+  const [selecionado, setSelecionado] = useState(workouts !== '' ? workouts[0].name : 'Teste');
+
   return (
     <div className='create'>
-      <label for='tre'>Criar novo treino: </label>
-      <input type='text' id='tre' />
-      <button>Criar</button>
+      <label htmlFor='tre'>Criar novo treino: </label>
+      <input type='text' id='tre' onChange={(e) => setNovoTreino(e.target.value)} value={novoTreino}/>
+      <button onClick={() => editWorkouts('create', {name: novoTreino, exercises: []})}>Criar</button>
 
       <label>Adicionar novo exercício: </label>
-      <label for='exe'>Nome: </label>
-      <input type='text' id='exe' />
+      <label htmlFor='exe'>Nome: </label>
+      <input type='text' id='exe' onChange={(e) => setExNome(e.target.value)} value={exNome}/>
 
-      <label for='rep'>Repetições: </label>
-      <input type='text' id='rep' />
+      <label htmlFor='rep'>Repetições: </label>
+      <input type='text' id='rep' onChange={(e) => setExRep(e.target.value)} value={exRep}/>
 
-      <label for='ilu'>Ilustração: </label>
-      <input type='text' id='ilu' />
+      <label htmlFor='car'>Carga: </label>
+      <input type='text' id='car' onChange={(e) => setExCar(e.target.value)} value={exCar}/>
 
-      <label for='treinos'>Adicionar ao Treino: </label>
-      <select id="treinos" name="treinos">
-		    <option value="A">A</option>
-		    <option value="B">B</option>
-		    <option value="C">C</option>
+      <label htmlFor='ilu'>Ilustração: </label>
+      <input type='text' id='ilu' onChange={(e) => setExImg(e.target.value)} value={exImg}/>
+
+      <label htmlFor='treinos'>Adicionar ao Treino: </label>
+      <select id="treinos" name="treinos" onChange={(e) => setSelecionado(e.target.value)} value={selecionado}>
+        {workouts !== '' && workouts.map((t) => <option key={t.name} value={t.name}>{t.name}</option>)}
     	</select>
-      <button>Adicionar</button>
+      <button onClick={() => {
+        editWorkouts(selecionado, {ex: exNome, rep: exRep, car: exCar, img: exImg})
+        setExNome('');
+        setExRep('');
+        setExCar('');
+        setExImg('');
+      }}>Adicionar</button>
     </div>
   );
 }
