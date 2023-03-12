@@ -1,29 +1,29 @@
 import "../App.css";
 import { useContext } from "react";
 import { AppContext } from "../context/AppContext";
+import { List, Training, Exercise, NameTraning } from "../styles"
 
 function App() {
   const { workouts } = useContext(AppContext);
 
   return (
-    <div className="show">
+    <List>
       {workouts.map((t) => {
         return (
-          <div className="training" key={t.name}>
-            <h1>{t.name}</h1>
-
+          <Training key={t.name}>
+            <NameTraning>{t.name}</NameTraning>
             {t.exercises.map((e) => {
               return (
-                <div className="exercise" key={e.ex}>
+                <Exercise key={e.ex}>
                   <h3>{`Nome do Exercício: ${e.ex} | N.Rep: ${e.rep} | Carga: ${e.car}`}</h3>
                   <img src={e.img} alt={e.ex} />
-                </div>
+                </Exercise>
               );
             })}
-          </div>
+          </Training>
         );
       })}
-    </div>
+    </List>
   );
 }
 

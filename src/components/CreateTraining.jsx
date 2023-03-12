@@ -1,6 +1,7 @@
 import '../App.css';
 import { useContext, useState, useEffect } from "react"
 import { AppContext } from "../context/AppContext"
+import { Create, Title } from "../styles"
 
 function CreateTraining() {
 
@@ -20,9 +21,11 @@ function CreateTraining() {
   }, [workouts]);
 
   return (
-    <div className='create'>
+    <Create>
+      <Title>Make Your <span>Training!!</span></Title>
+      <img src='/dumbbell.png' alt='dumbbell.png'></img>
       <label htmlFor='tre'>Criar novo treino: </label>
-      <input type='text' id='tre' onChange={(e) => setNovoTreino(e.target.value)} value={novoTreino}/>
+      <input type='text' id='tre' spellcheck="false" onChange={(e) => setNovoTreino(e.target.value)} value={novoTreino}/>
       <button onClick={() => {
         editWorkouts('create', {name: novoTreino, exercises: []});
         setNovoTreino('')
@@ -30,16 +33,16 @@ function CreateTraining() {
 
       <label>Adicionar novo exercício: </label>
       <label htmlFor='exe'>Nome: </label>
-      <input type='text' id='exe' onChange={(e) => setExNome(e.target.value)} value={exNome}/>
+      <input type='text' id='exe' spellcheck="false" onChange={(e) => setExNome(e.target.value)} value={exNome}/>
 
       <label htmlFor='rep'>Repetições: </label>
-      <input type='text' id='rep' onChange={(e) => setExRep(e.target.value)} value={exRep}/>
+      <input type='text' id='rep' spellcheck="false" onChange={(e) => setExRep(e.target.value)} value={exRep}/>
 
       <label htmlFor='car'>Carga: </label>
-      <input type='text' id='car' onChange={(e) => setExCar(e.target.value)} value={exCar}/>
+      <input type='text' id='car' spellcheck="false" onChange={(e) => setExCar(e.target.value)} value={exCar}/>
 
       <label htmlFor='ilu'>Ilustração: </label>
-      <input type='text' id='ilu' onChange={(e) => setExImg(e.target.value)} value={exImg}/>
+      <input type='text' id='ilu' spellcheck="false" onChange={(e) => setExImg(e.target.value)} value={exImg}/>
 
       <label htmlFor='treinos'>Adicionar ao Treino: </label>
       <select id="treinos" name="treinos" onChange={(e) => setSelecionado(e.target.value)} value={selecionado}>
@@ -56,7 +59,7 @@ function CreateTraining() {
         setExCar('');
         setExImg('');
       }}>Adicionar</button>
-    </div>
+    </Create>
   );
 }
 
