@@ -1,5 +1,5 @@
 import '../App.css';
-import { useContext, useState } from "react"
+import { useContext, useState, useEffect } from "react"
 import { AppContext } from "../context/AppContext"
 
 function CreateTraining() {
@@ -11,13 +11,22 @@ function CreateTraining() {
   const [exRep, setExRep] = useState('');
   const [exCar, setExCar] = useState('');
   const [exImg, setExImg] = useState('');
-  const [selecionado, setSelecionado] = useState(workouts !== '' ? workouts[0].name : 'Teste');
+  const [selecionado, setSelecionado] = useState('');
+
+  useEffect(() => {
+    if (workouts !== ''){
+      setSelecionado(workouts[0].name)
+    }
+  }, [workouts]);
 
   return (
     <div className='create'>
       <label htmlFor='tre'>Criar novo treino: </label>
       <input type='text' id='tre' onChange={(e) => setNovoTreino(e.target.value)} value={novoTreino}/>
-      <button onClick={() => editWorkouts('create', {name: novoTreino, exercises: []})}>Criar</button>
+      <button onClick={() => {
+        editWorkouts('create', {name: novoTreino, exercises: []});
+        setNovoTreino('')
+      }}>Criar</button>
 
       <label>Adicionar novo exercício: </label>
       <label htmlFor='exe'>Nome: </label>
@@ -34,7 +43,11 @@ function CreateTraining() {
 
       <label htmlFor='treinos'>Adicionar ao Treino: </label>
       <select id="treinos" name="treinos" onChange={(e) => setSelecionado(e.target.value)} value={selecionado}>
-        {workouts !== '' && workouts.map((t) => <option key={t.name} value={t.name}>{t.name}</option>)}
+        {workouts !== '' && workouts.sort(( x, y ) => {
+          const a = x.name.toUpperCase();
+          const b = y.name.toUpperCase();
+          return a === b ? 0 : a > b ? 1 : -1;
+        }).map((t) => <option key={t.name} value={t.name}>{t.name}</option>)}
     	</select>
       <button onClick={() => {
         editWorkouts(selecionado, {ex: exNome, rep: exRep, car: exCar, img: exImg})

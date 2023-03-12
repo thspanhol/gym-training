@@ -16,10 +16,8 @@ export const AppProvider = ({children}) => {
         if (option === 'create') {
            setWorkouts([...workouts, data]);
         } else {
-            console.log(workouts.length);
             const index = workouts.length === 1 ? 0 : workouts.findIndex(i => i.name === option);
             const edit = workouts[index];
-            console.log(edit);
             edit.exercises = [...edit.exercises, data]
             setWorkouts(workouts.length === 1 ? [edit] : [...workouts.filter((f) => f.name !== option), edit])
         }
