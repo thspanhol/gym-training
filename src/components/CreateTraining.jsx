@@ -1,4 +1,3 @@
-import '../App.css';
 import { useContext, useState, useEffect } from "react"
 import { AppContext } from "../context/AppContext"
 import { Create, Title } from "../styles"
@@ -22,10 +21,10 @@ function CreateTraining() {
 
   return (
     <Create>
-      <Title>Make Your <span>Training!!</span></Title>
+      <Title>Crie Seu <span>Treino!!</span></Title>
       <img src='/dumbbell.png' alt='dumbbell.png'></img>
       <label htmlFor='tre'>Criar novo treino: </label>
-      <input type='text' id='tre' spellcheck="false" onChange={(e) => setNovoTreino(e.target.value)} value={novoTreino}/>
+      <input type='text' id='tre' spellCheck="false" placeholder='Ex: Treino de Pernas' onChange={(e) => setNovoTreino(e.target.value)} value={novoTreino}/>
       <button onClick={() => {
         editWorkouts('create', {name: novoTreino, exercises: []});
         setNovoTreino('')
@@ -33,16 +32,16 @@ function CreateTraining() {
 
       <label>Adicionar novo exercício: </label>
       <label htmlFor='exe'>Nome: </label>
-      <input type='text' id='exe' spellcheck="false" onChange={(e) => setExNome(e.target.value)} value={exNome}/>
+      <input type='text' id='exe' spellCheck="false" placeholder='Ex: Cadeira Adutora' onChange={(e) => setExNome(e.target.value)} value={exNome}/>
 
       <label htmlFor='rep'>Repetições: </label>
-      <input type='text' id='rep' spellcheck="false" onChange={(e) => setExRep(e.target.value)} value={exRep}/>
+      <input type='text' id='rep' spellCheck="false" placeholder='Ex: 3x12' onChange={(e) => setExRep(e.target.value)} value={exRep}/>
 
       <label htmlFor='car'>Carga: </label>
-      <input type='text' id='car' spellcheck="false" onChange={(e) => setExCar(e.target.value)} value={exCar}/>
+      <input type='text' id='car' spellCheck="false" placeholder='Ex: 30kg' onChange={(e) => setExCar(e.target.value)} value={exCar}/>
 
       <label htmlFor='ilu'>Ilustração: </label>
-      <input type='text' id='ilu' spellcheck="false" onChange={(e) => setExImg(e.target.value)} value={exImg}/>
+      <input type='text' id='ilu' spellCheck="false" placeholder='Link de uma Imagem' onChange={(e) => setExImg(e.target.value)} value={exImg}/>
 
       <label htmlFor='treinos'>Adicionar ao Treino: </label>
       <select id="treinos" name="treinos" onChange={(e) => setSelecionado(e.target.value)} value={selecionado}>

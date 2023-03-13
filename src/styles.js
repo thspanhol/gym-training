@@ -1,5 +1,4 @@
-import styled from "styled-components";
-import { createGlobalStyle } from "styled-components"
+import styled, { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
 *
@@ -34,6 +33,10 @@ export const Create = styled.div`
     outline: 0;
     text-align: center;
     font-size: large;
+  }
+  input::placeholder
+  {
+    font-size: medium;
   }
   button
   {
@@ -113,6 +116,10 @@ export const Exercise = styled.div`
   img
   {
   width: 15%;
+  border-radius: 30px;
+  margin-top: 1vh;
+  margin-bottom: 1vh;
+  margin-left: 1vw;
   }
 `;
 export const Background = styled.div`

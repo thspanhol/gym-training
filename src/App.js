@@ -1,6 +1,6 @@
-import './App.css';
 import CreateTraining from './components/CreateTraining';
 import ShowTraining from './components/ShowTraining'
+import NoTraining from './components/NoTraining'
 import { useContext } from "react"
 import { AppContext } from "./context/AppContext"
 import { Background, GlobalStyle } from "./styles"
@@ -13,7 +13,7 @@ function App() {
     <Background>
       <GlobalStyle />
       <CreateTraining />
-      {workouts !== '' && <ShowTraining />}
+      {workouts !== '' ? <ShowTraining /> : <NoTraining /> }
     </Background>
   );
 }
