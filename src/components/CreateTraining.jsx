@@ -52,7 +52,7 @@ function CreateTraining() {
         }).map((t) => <option key={t.name} value={t.name}>{t.name}</option>)}
     	</select>
       <button onClick={() => {
-        editWorkouts(selecionado, {ex: exNome, rep: exRep, car: exCar, img: exImg})
+        editWorkouts(selecionado, {ex: exNome, rep: exRep, car: exCar, img: exImg === '' ? "/pin-icon.png" : exImg})
         setExNome('');
         setExRep('');
         setExCar('');
