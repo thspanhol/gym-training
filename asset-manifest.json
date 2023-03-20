@@ -1,0 +1,12 @@
+{
+  "files": {
+    "main.js": "/gym-training/static/js/main.c234feec.js",
+    "static/js/787.7367f5db.chunk.js": "/gym-training/static/js/787.7367f5db.chunk.js",
+    "index.html": "/gym-training/index.html",
+    "main.c234feec.js.map": "/gym-training/static/js/main.c234feec.js.map",
+    "787.7367f5db.chunk.js.map": "/gym-training/static/js/787.7367f5db.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.c234feec.js"
+  ]
+}
