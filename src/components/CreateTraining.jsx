@@ -22,7 +22,7 @@ function CreateTraining() {
   return (
     <Create>
       <Title>Crie Seu <span>Treino!!</span></Title>
-      <img src='/dumbbell.png' alt='dumbbell.png'></img>
+      <img src='https://raw.githubusercontent.com/thspanhol/gym-training/main/public/dumbbell.png' alt='dumbbell.png'></img>
       <label htmlFor='tre'>Criar novo treino: </label>
       <input type='text' id='tre' spellCheck="false" placeholder='Ex: Treino de Pernas' onChange={(e) => setNovoTreino(e.target.value)} value={novoTreino}/>
       <button onClick={() => {
@@ -52,7 +52,7 @@ function CreateTraining() {
         }).map((t) => <option key={t.name} value={t.name}>{t.name}</option>)}
     	</select>
       <button onClick={() => {
-        editWorkouts(selecionado, {ex: exNome, rep: exRep, car: exCar, img: exImg === '' ? "/pin-icon.png" : exImg})
+        editWorkouts(selecionado, {ex: exNome, rep: exRep, car: exCar, img: exImg === '' ? "https://raw.githubusercontent.com/thspanhol/gym-training/main/public/pin-icon.png" : exImg})
         setExNome('');
         setExRep('');
         setExCar('');
