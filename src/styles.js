@@ -67,6 +67,11 @@ export const Create = styled.div`
   {
     margin-top: 1vh;
   }
+  p
+  {
+    font-size: medium;
+    margin-top: -10px;
+  }
 `;
 export const Title = styled.h1`
   font-size: 4.5vw;

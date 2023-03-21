@@ -41,6 +41,7 @@ function CreateTraining() {
       <input type='text' id='car' spellCheck="false" placeholder='Ex: 30kg' onChange={(e) => setExCar(e.target.value)} value={exCar}/>
 
       <label htmlFor='ilu'>Ilustração: </label>
+      <p>(Opcional)</p>
       <input type='text' id='ilu' spellCheck="false" placeholder='Link de uma Imagem' onChange={(e) => setExImg(e.target.value)} value={exImg}/>
 
       <label htmlFor='treinos'>Adicionar ao Treino: </label>
