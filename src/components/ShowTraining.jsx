@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { AppContext } from "../context/AppContext";
-import { List, Training, Exercise, NameTraning } from "../styles"
+import { List, Training, Exercise, NameTraning } from "../styles";
 
 function ShowTraining() {
   const { workouts } = useContext(AppContext);

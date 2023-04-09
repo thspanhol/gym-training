@@ -8,7 +8,7 @@ export const GlobalStyle = createGlobalStyle`
   box-sizing: border-box;
   font-family: 'Permanent Marker', cursive;
 }
-`
+`;
 export const Create = styled.div`
   display: flex;
   flex-direction: column;
@@ -20,12 +20,10 @@ export const Create = styled.div`
   height: 100vh;
   position: fixed;
   font-size: x-large;
-  img
-  {
+  img {
     height: 22.5vh;
   }
-  input
-  {
+  input {
     width: 50%;
     border-radius: 30px;
     box-shadow: 0 0 0 0;
@@ -34,12 +32,10 @@ export const Create = styled.div`
     text-align: center;
     font-size: large;
   }
-  input::placeholder
-  {
+  input::placeholder {
     font-size: medium;
   }
-  button
-  {
+  button {
     margin-top: 0.5vh;
     font-size: large;
     border-radius: 30px;
@@ -49,8 +45,7 @@ export const Create = styled.div`
     text-align: center;
     width: 35%;
   }
-  select
-  {
+  select {
     width: 50%;
     border-radius: 30px;
     box-shadow: 0 0 0 0;
@@ -59,16 +54,13 @@ export const Create = styled.div`
     text-align: center;
     font-size: large;
   }
-  label:nth-of-type(2)
-  {
+  label:nth-of-type(2) {
     margin-top: 2vh;
   }
-  label:nth-of-type(3)
-  {
+  label:nth-of-type(3) {
     margin-top: 1vh;
   }
-  p
-  {
+  p {
     font-size: medium;
     margin-top: -10px;
   }
@@ -78,8 +70,7 @@ export const Title = styled.h1`
   color: #111;
   display: flex;
   flex-direction: column;
-  span
-  {
+  span {
     margin-top: -3.7vh;
     font-size: 5.25vw;
     max-height: 7vh;
@@ -92,7 +83,7 @@ export const List = styled.div`
   flex-direction: column;
   width: 70vw;
   margin-left: 30vw;
-  background: #E6E6FA;
+  background: #e6e6fa;
 
   align-items: center;
   justify-content: center;
@@ -107,8 +98,7 @@ export const Training = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  h1
-  {
+  h1 {
     margin-bottom: 1vh;
   }
 `;
@@ -118,19 +108,18 @@ export const Exercise = styled.div`
   justify-content: center;
   width: 100%;
 
-  img
-  {
-  width: 15%;
-  border-radius: 30px;
-  margin-top: 1vh;
-  margin-bottom: 1vh;
-  margin-left: 1vw;
+  img {
+    width: 15%;
+    border-radius: 30px;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    margin-left: 1vw;
   }
 `;
 export const Background = styled.div`
   display: flex;
 `;
 export const NameTraning = styled.div`
-    font-size: 7vh;
-    color: #dc143c;
+  font-size: 7vh;
+  color: #dc143c;
 `;
