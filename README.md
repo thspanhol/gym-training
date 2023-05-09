@@ -22,7 +22,7 @@ npm start
 
 Ao abrir a aplicação será renderizada uma tela de apresentação informando que primeiro é preciso criar um treino. Depois que o treino foi criado, exercícios poderão ser adicionados a ele junto com uma imagem de referência e ambos serão renderizados na tela.
 
-## ⚜️ Possiveis alterações
+## ⚜️ Possíveis alterações
 
 * A estilização da página pode ser completamente refeita de uma forma muito simples. Basta alterar a estilização dos componentes presentes no artuivo Styles.js. Isso é possível graças ao Styled Components.
 
